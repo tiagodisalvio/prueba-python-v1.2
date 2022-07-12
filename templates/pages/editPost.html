@@ -1,0 +1,23 @@
+{% extends "homepage/index.html" %}
+{% load static %}
+
+
+{% block varContent %}
+
+   <div class="my-4">
+
+        <form action = "" method="POST" enctype="multipart/form-data">{% csrf_token %}
+           
+           <table>
+               
+            {{myForm.as_table}}
+            
+         </table> 
+        
+            <input type="submit" value="Enviar">
+            
+        </form>
+        
+    </div>
+
+{% endblock varContent%}

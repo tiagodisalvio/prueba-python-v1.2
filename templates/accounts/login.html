@@ -1,0 +1,31 @@
+{% extends "homepage/index.html" %}
+{% load static %}
+
+
+
+{% block loginInicio %}
+
+
+
+    <div class="container mt-5">
+        <div class="row d-flex justify-content-center">
+            <div class="col-md-6">
+                <div class="card px-5 py-5" id="form1">
+                    <div class="row d-flex justify-content-center">
+                        <form action="" method="POST">
+                            {% csrf_token %}
+                            
+                            {{form.as_p}}
+                    
+                            <button type="submit">Iniciar Sesión</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    
+{% endblock loginInicio %}
+
+

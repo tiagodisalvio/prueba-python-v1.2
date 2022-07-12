@@ -1,0 +1,80 @@
+{% extends "homepage/index.html" %}
+{% load static %}
+
+
+{% block varContent %}
+
+    <div class="container mt-5">
+        <div class="row d-flex justify-content-center">
+            <div class="col-md-6">
+                <div class="card px-5 py-5" id="form1">
+                    <div class="row d-flex justify-content-center">
+                        <div class="container px-4 px-lg-5">
+                            <div class="row gx-4 gx-lg-5 justify-content-center">
+                                <div class="col-md-10 col-lg-8 col-xl-7"></div>
+                                    <h2>Compartí tu experiencia</h2>
+                                    
+                                    <a href="{% url 'newPost' %}">Crear un Post</a>
+                                    <hr class="my-4" />
+                                    <h2>Mirá todos los Posteos de nuestros usuarios</h2>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    
+
+    <div class="container px-4 px-lg-5">
+        <div class="row gx-4 gx-lg-5 justify-content-center">
+            <div class="col-md-10 col-lg-8 col-xl-7">
+                {% for post in posts %}
+                <div class="post-preview">
+                    <a href="{% url 'postDetail' post.id %}">
+                        <img src="{{ MEDIA_URL }}media/images" alt="" width=100%>
+                        <h2 class="post-title">{{post.place}}</h2>
+                        <h3 class="post-subtitle">{{post.title}}</h3>
+                    </a>
+                    <p class="post-meta">
+                        Posted by
+                        <a href="{% url 'postDetail' post.id %}">{{post.name}}</a>
+                        
+                    </p>
+                </div>
+                <!-- Divider-->
+                <hr class="my-4" />
+                    
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+  
+
+
+
+    <div class="container mt-5">
+        <div class="row d-flex justify-content-center">
+            <div class="col-md-6">
+                <div class="card px-5 py-5" id="form1">
+                    <div class="row d-flex justify-content-center">
+                        <div class="container px-4 px-lg-5">
+                            <div class="row gx-4 gx-lg-5 justify-content-center">
+                                <h2>Contanos tu Experiencia, forma parte de nuestro Blog</h2>
+                                <a href="{% url 'newPost' %}">Crear un Post</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    
+    
+   
+
+{% endblock varContent%}

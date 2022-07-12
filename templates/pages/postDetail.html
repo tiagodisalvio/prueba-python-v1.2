@@ -1,0 +1,36 @@
+{% extends "homepage/index.html" %}
+{% load static %}
+
+
+{% block varContent %}
+
+  <div class="container px-4 px-lg-5">
+        <div class="row gx-4 gx-lg-5 justify-content-center">
+            <div class="col-md-10 col-lg-8 col-xl-7">
+                
+                <div class="post-preview">
+                    
+                        <img src="http://127.0.0.1:8000/pages{{ post.img.url }}" alt="" width=100%>
+                        <h2 class="post-title">{{post.place}}</h2>
+                        <h3 class="post-subtitle">{{post.title}}</h3>
+                    
+                    <p class="post-meta">
+                        Posted by {{post.name}}
+                        
+                    </p>
+                    <p class="post-meta">{{post.description}}</p>
+                </div>
+                <!-- Divider-->
+                <hr class="my-4" />
+                
+                    <button><a href="{% url 'postDelete' post.id %}">Eliminar Post</a></button>    
+
+                    <button><a href="{% url 'postUpdate' post.id %}">Editar Post</a></button>    
+                    
+                    <button><a href="{% url 'homePages' %}">Volver al inicio</a></button>             
+                
+            </div>
+        </div>
+    </div>
+
+{% endblock varContent%}
